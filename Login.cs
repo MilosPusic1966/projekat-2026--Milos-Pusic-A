@@ -22,5 +22,10 @@ namespace projekat_2026__Milos_Pusic_A
             // Milos Pusic
             // drugi red
         }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

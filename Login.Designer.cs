@@ -28,21 +28,80 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtPass = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnOK = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // Form1
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(234, 110);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(100, 20);
+            this.txtName.TabIndex = 0;
+            // 
+            // txtPass
+            // 
+            this.txtPass.Location = new System.Drawing.Point(234, 155);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(100, 20);
+            this.txtPass.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(136, 113);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "E-mail";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(136, 162);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Password";
+            // 
+            // btnOK
+            // 
+            this.btnOK.Location = new System.Drawing.Point(234, 224);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(95, 31);
+            this.btnOK.TabIndex = 4;
+            this.btnOK.Text = "Login";
+            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            // 
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(693, 401);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(556, 336);
+            this.Controls.Add(this.btnOK);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtPass);
+            this.Controls.Add(this.txtName);
+            this.Name = "Login";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtPass;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnOK;
     }
 }
 
