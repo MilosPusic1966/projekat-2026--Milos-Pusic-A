@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace projekat_2026__Milos_Pusic_A
 {
@@ -25,7 +26,44 @@ namespace projekat_2026__Milos_Pusic_A
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            if (txtName.Text == "" || txtPass.Text == "")
+            {
+                MessageBox.Show("Morate uneti email i lozinku!");
+            }
+            else
+            {
+                SqlConnection veza = konekcija.Connect();
+                DataTable podaci = new DataTable();
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM korisnik WHERE email='"+txtName.Text+"'", veza);
+                adapter.Fill(podaci);
+                int count = podaci.Rows.Count;
+                if (count == 0)
+                {
+                    MessageBox.Show("Email ne postoji");
+                }
+                else 
+                {
+                    /*
+                    string prvi = podaci.Rows[0]["pass"].ToString();
+                    string drugi = txtPass.Text;
+                    bool isti = prvi.Equals(drugi);
+                    bool jednaki = String.Equals(prvi, drugi);
+                    int poredak = String.Compare(prvi, drugi);
+                    */
 
+                    if (podaci.Rows[0]["pass"].ToString()==txtPass.Text)
+                    {
+                        MessageBox.Show("Uspesno ste se ulogovali");
+                        this.Hide();
+                        Glavna forma = new Glavna();
+                        forma.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Pogresna lozinka");
+                    }
+                }
+            }
         }
     }
 }
