@@ -8,6 +8,7 @@ namespace projekat_2026__Milos_Pusic_A
 {
     internal static class Program
     {
+        static public string user;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

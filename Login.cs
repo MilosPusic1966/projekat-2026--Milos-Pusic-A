@@ -32,7 +32,8 @@ namespace projekat_2026__Milos_Pusic_A
             }
             else
             {
-                SqlConnection veza = konekcija.Connect();
+                string lokacija = comboBox1.SelectedItem.ToString();
+                SqlConnection veza = konekcija.Connect(lokacija);
                 DataTable podaci = new DataTable();
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM korisnik WHERE email='"+txtName.Text+"'", veza);
                 adapter.Fill(podaci);
@@ -64,6 +65,15 @@ namespace projekat_2026__Milos_Pusic_A
                     }
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Program.user = comboBox1.SelectedItem.ToString();
+            this.Hide();
+            SignUp nova = new SignUp();
+            nova.Show();
+            this.Show();
         }
     }
 }
