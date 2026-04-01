@@ -71,10 +71,8 @@ namespace projekat_2026__Milos_Pusic_A
         private void button1_Click(object sender, EventArgs e)
         {
             Program.user = comboBox1.SelectedItem.ToString();
-            this.Hide();
             SignUp nova = new SignUp();
-            nova.Show();
-            this.Show();
+            nova.ShowDialog();
         }
     }
 }
