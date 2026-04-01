@@ -22,6 +22,7 @@ namespace projekat_2026__Milos_Pusic_A
         {
             // Milos Pusic
             // drugi red
+            comboBox1.SelectedIndex = 0;
         }
 
         private void btnOK_Click(object sender, EventArgs e)
